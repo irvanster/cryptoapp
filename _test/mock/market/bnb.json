@@ -1,0 +1,40 @@
+[
+    {
+      "pair": "ADA",
+      "target_pair" :"BNB",
+      "vol" :"43.350",
+      "last_price" : "0,01517",
+      "last_price_dollar" : "3,12",
+      "difference" : "-7,73"
+    },
+      {
+      "pair": "WPR",
+      "target_pair" :"BNB",
+      "vol" :"517",
+      "last_price" : "0,00001517",
+      "last_price_dollar" : "0,09",
+      "difference" : "18.52"
+    },{
+      "pair": "GNT",
+      "target_pair" :"BNB",
+      "vol" :"2.644",
+      "last_price" : "0.01517",
+      "last_price_dollar" : "3,12",
+      "difference" : "3.23"
+    },{
+      "pair": "CNB",
+      "target_pair" :"BNB",
+      "vol" :"2.644",
+      "last_price" : "0.01517",
+      "last_price_dollar" : "3,12",
+      "difference" : "3.23"
+    },
+    {
+      "pair": "ETH",
+      "target_pair" :"BNB",
+      "vol" :"2.644",
+      "last_price" : "0.01517",
+      "last_price_dollar" : "3,12",
+      "difference" : "3.23"
+    }
+  ]
