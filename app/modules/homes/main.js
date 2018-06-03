@@ -32,7 +32,7 @@ export default class HomeMain extends Component {
                 <TopBtcVolume></TopBtcVolume>
             </View>
             <View style={{marginTop:10}}>
-                <Market></Market>
+                <Market navigation={this.props.navigation}></Market>
             </View>
             </Content>
         </Container>

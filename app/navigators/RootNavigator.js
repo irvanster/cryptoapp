@@ -66,13 +66,6 @@ const MainNavigator = StackNavigator({
     navigationOptions:{
       header:null
     }
-  },
-  Market: {
-    screen: MainMarket,
-    navigationOptions:{
-      title:'Markets',
-      headerTitleStyle :{textAlign: 'center',alignSelf:'center'},
-    }
   },DetailCoin:{
     screen : DetailCoin,
     navigationOptions:({navigation})=>({
