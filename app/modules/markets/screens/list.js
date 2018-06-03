@@ -82,7 +82,7 @@ export default class List extends Component {
 
                         <Col sm={1}>
                         {item.difference > 0 ? (
-                            <View style={{backgroundColor:'green',borderRadius: 5,height:35,width:100,alignSelf:'flex-end'}}>
+                            <View style={{backgroundColor:'#e50370',borderRadius: 5,height:35,width:100,alignSelf:'flex-end'}}>
                                 <Text style={[style.text_content,{textAlign:'center'}]}>+{item.difference}</Text>
                             </View>
                         ):(

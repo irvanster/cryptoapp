@@ -17,44 +17,46 @@ const tabOptions = {
   swipeEnabled: false,
   animationEnabled: false,
   backBehavior: 'none',
-  tabBarOptions: {
-    fontSize : 15,
-  },
-  navigationOptions: ({ navigation }) => ({
-    tabBarIcon: ({ focused, tintColor }) => {
-      const { routeName } = navigation.state;
-      let iconName;
-      let iconType;
-      if (routeName === 'HomeMain') {
-        iconName = `ios-bonfire${focused ? '' : '-outline'}`;
-      } else if (routeName === 'Market') {
-        iconName = 'line-graph';
-        iconType = 'Entypo';
-      }else if (routeName === 'Trades') {
-          iconName = 'flow-tree';
-          iconType = 'Entypo';
-      }else if (routeName === 'Funds') {
-        iconName = 'md-cash';
-      }else if (routeName === 'Account') {
-        iconName = `ios-contacts${focused ? '' : '-outline'}`;
-      }
+  lazy : false,
+  
 
-      // You can return any component that you like here! We usually use an
-      // icon component from react-native-vector-icons
-      return <Icon name={iconName} type={iconType} style={{ color : tintColor, fontSize: 25 }} />;
-    },
-  }),
+navigationOptions: ({ navigation }) => ({
+  tabBarIcon: ({ focused, tintColor }) => {
+    const { routeName } = navigation.state;
+    let iconName;
+    let iconType;
+    if (routeName === 'HomeMain') {
+      iconName = `ios-bonfire${focused ? '' : '-outline'}`;
+    } else if (routeName === 'Market') {
+      iconName = 'line-graph';
+      iconType = 'Entypo';
+    }else if (routeName === 'Trades') {
+        iconName = 'flow-tree';
+        iconType = 'Entypo';
+    }else if (routeName === 'Funds') {
+      iconName = 'md-cash';
+    }else if (routeName === 'Account') {
+      iconName = `ios-contacts${focused ? '' : '-outline'}`;
+    }
+
+    // You can return any component that you like here! We usually use an
+    // icon component from react-native-vector-icons
+    return <Icon name={iconName} type={iconType} style={{ color : tintColor, fontSize: 15 }} />;
+  },
+}),
   tabBarOptions: {
     activeTintColor: '#2B79C9',
     inactiveTintColor: 'gray',
-    label : {
-      fontSize: 12
+    labelStyle: {
+      fontSize: 10,
     },
     style: {
         backgroundColor: '#fff',
+        padding: 0
     },
-    showIcon: true ,
-    indicator: false,
+    showIcon: true,
+    renderIndicator: () => null,
+
   },
 
 }
@@ -86,21 +88,14 @@ const RootNavigator = TabNavigator({
     navigationOptions:{
       title: 'Home',
       header: null,
-      fontSize : 12,
-      tabBarIcon: ({focues,tintColor})=>(
-        <Icon style={{color:'gray'}} name="ios-bonfire"></Icon>
-      ),
+      
+
     }
   },
   Market: {
     screen: MainMarket,
     navigationOptions: {
       title: 'Market',
-      fontSize : 12,
-      header: null,
-      tabBarIcon: ({focues,tintColor})=>(
-        <Icon style={{color:'gray'}} name="line-graph" type='Entypo'></Icon>
-      )
     }
   },
   Trades: {
@@ -108,29 +103,22 @@ const RootNavigator = TabNavigator({
     navigationOptions: {
       title: 'Trades',
       header: null,
-      tabBarIcon: ({focues,tintColor})=>(
-        <Icon style={{color:'gray'}} name="flow-tree" type='Entypo'></Icon>
-      )
+
     }
   },
   Funds: {
     screen: Account,
     navigationOptions: {
       title: 'Funds',
-      header: null,
-      tabBarIcon: ({focues,tintColor})=>(
-        <Icon style={{color:'gray'}} name="md-cash"></Icon>
-      )
     }
   },
   Account: {
     screen: Account,
+    header: {
+      headerTitle: 'adas'
+    },
     navigationOptions: {
       title: 'Account',
-      header: null,
-      tabBarIcon: ({focues,tintColor})=>(
-        <Icon style={{color:'gray'}} name="ios-contacts"></Icon>
-      )
     }
   }
   },tabOptions)

@@ -6,8 +6,7 @@ export default class ReferallProgram extends Component {
     render() {
         return(
             <WebView
-                source={{uri: 'https://github.com/facebook/react-native'}}
-                style={{marginTop: 20}}
+                source={{uri: 'https://www.binance.com/invite.html'}}
             />
         )
     }

@@ -19,7 +19,7 @@ class TopBtcVolume extends Component {
     
     handleStatusColor(isWin,isLose){
         if(isWin){
-            return "green"
+            return "#242d3d"
         }
         if(isLose){
             return "red"

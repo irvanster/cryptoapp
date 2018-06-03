@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Button }  from 'react-native'
 import { Column as Col, Row} from 'react-native-flexbox-grid';
-import { Tabs, Tab } from 'native-base';
+import { Tabs, Tab, TabHeading, Icon } from 'native-base';
 import { primaryColor } from '../../commons/const_style';
 import { getAllData } from '../../markets/btc/action'
 import { connect } from 'react-redux'  
@@ -19,7 +19,7 @@ class Market extends Component {
 
     handleStatusColor(isWin,isLose){
         if(isWin){
-            return "green"
+            return "#242d3d"
         }
         if(isLose){
             return "red"
@@ -42,11 +42,21 @@ class Market extends Component {
       console.log( this.props)
     return (
         <View>
-            <Tabs initialPage={0} tabBarUnderlineStyle={{backgroundColor:'#2B79C9'}}>
-                <Tab heading="Gainers" activeTextStyle={{color:'#2B79C9',width:'100%',borderRightColor:'#e9e9e9',borderRightWidth:1,textAlign:'center'}} tabStyle={style.tab_header} activeTabStyle={style.tab_header_active}>
+            <Tabs initialPage={0} tabBarUnderlineStyle={{backgroundColor:'#2B79C9'}} locked>
+                <Tab heading={
+                    <TabHeading style={style.tab_header}>
+                        <Icon name='trending-up' type='MaterialIcons'/>
+                        <Text>Gainers</Text>
+                    </TabHeading>
+                } activeTextStyle={{color:'#2B79C9',width:'100%',borderRightColor:'#e9e9e9',borderRightWidth:1,textAlign:'center'}} tabStyle={style.tab_header} activeTabStyle={style.tab_header_active}>
                     <List  data={this.props.reducer.data} size={5} isGain={true}/>
                 </Tab>
-                <Tab heading="Loosers"activeTextStyle={{color:'#2B79C9',width:'100%',textAlign:'center'}} tabStyle={style.tab_header} activeTabStyle={style.tab_header_active} >
+                <Tab heading={
+                    <TabHeading style={style.tab_header}>
+                        <Icon name='trending-down' type='MaterialIcons'/>
+                        <Text>Loosers</Text>
+                    </TabHeading>
+                } activeTextStyle={{color:'#2B79C9',width:'100%',textAlign:'center'}} tabStyle={style.tab_header} activeTabStyle={style.tab_header_active} >
                     <List data={this.props.reducer.data} size={5} isGain={false}/>
                 </Tab>
             </Tabs>
@@ -68,20 +78,21 @@ const style={
     text_content:{
         color:'#bbc2d0',
         fontSize: 18,
-    }, tab_header:{
+    },
+    tab_header:{
         backgroundColor:'#fff'
-      },
+    },
       tab_header_active:{
-        backgroundColor:'#fff'
-      },
+        backgroundColor:'#2B79C9'
+    },
       text_header:{
         color:'#bbc2d0',
         fontSize:12
-      },
+    },
       header:{
         alignItems: 'center',
         backgroundColor:'#fff'
-      }
+    }
 }
 function mapStateToProps(state){
     return{
