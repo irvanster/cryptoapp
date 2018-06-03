@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Header, Tabs, Tab, TabHeading, Button } from 'native-base';
+import { Container, Header, Tabs, Tab, TabHeading, Button,Left,Right,Body,Title } from 'native-base';
 import { primaryColor } from '../../commons/const_style';
 import { Text,View } from 'react-native'
 import commonColor from 'native-base/dist/src/theme/variables/commonColor';
@@ -29,8 +29,16 @@ class Main extends Component {
     console.log(this.props)
     return (
     <Container style={{backgroundColor:'black'}} >
+    <Header style={{backgroundColor:'#FAFAFA'}} noShadow>
+        <Left style={{flex:1}} />
+        <Body style={{flex:1,alignItems:'center'}}>
+          <Title style={{color:'black'}}>Header</Title>
+        </Body>
+        <Right style={{flex:1}} />
+    </Header>
         <Tabs initialPage={0} tabBarUnderlineStyle={{backgroundColor:'yellow'}} onChangeTab={({i,ref,from})=>this.setState({currentIndexTab:i})}>
         <Tab heading="BTC" activeTextStyle={{color:'yellow'}} tabStyle={style.tab_header} activeTabStyle={style.tab_header_active} >
+
             <List navigation={this.props.navigation} data={this.props.reducer.btcReducer.data} isDetail={true}></List>
           </Tab>
           <Tab heading="ADX" activeTextStyle={{color:'yellow'}} tabStyle={style.tab_header} activeTabStyle={style.tab_header_active} >
