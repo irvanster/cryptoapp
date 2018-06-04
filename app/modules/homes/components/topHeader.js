@@ -48,7 +48,7 @@ export default class TopHeader extends Component {
   render() {
     return (
      <View style={styles.wrapper}  >
-        <Swiper showsButtons={false} paginationStyle={{position:'absolute', bottom: 5}} activeDotColor={'yellow'} dotColor={'#58606c'}>
+        <Swiper showsButtons={false} paginationStyle={{position:'absolute', bottom: 5}} activeDotColor={'#2B79C9'} dotColor={'#58606c'}>
         <View style={styles.slide}>
             <Row size={3}>
                 <Col sm={1} style={[styles.currency_parent_item]}>

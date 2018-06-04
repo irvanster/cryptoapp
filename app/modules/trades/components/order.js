@@ -5,7 +5,7 @@ export default class Order extends Component {
   render() {
     return (
         <View>
-
+          
         </View>
     )
   }

@@ -19,12 +19,12 @@ class Market extends Component {
 
     handleStatusColor(isWin,isLose){
         if(isWin){
-            return "#242d3d"
+            return "#00c087"
         }
         if(isLose){
             return "red"
         }
-        return "#bbc2d0"
+        return "#00c087"
     }
     
     
@@ -43,21 +43,25 @@ class Market extends Component {
     return (
         <View>
             <Tabs initialPage={0} tabBarUnderlineStyle={{backgroundColor:'#2B79C9'}} locked>
-                <Tab heading={
+                <Tab 
+                activeTextStyle={{color: '#2B79C7', fontWeight: 'normal'}}
+                heading={
                     <TabHeading style={style.tab_header}>
                         <Icon name='trending-up' type='MaterialIcons'/>
                         <Text>Gainers</Text>
                     </TabHeading>
                 } activeTextStyle={{color:'#2B79C9',width:'100%',borderRightColor:'#e9e9e9',borderRightWidth:1,textAlign:'center'}} tabStyle={style.tab_header} activeTabStyle={style.tab_header_active}>
-                    <List  data={this.props.reducer.data} size={5} isGain={true}/>
+                    <List navigation={this.props.navigation} data={this.props.reducer.data} size={5} isGain={true}/>
                 </Tab>
-                <Tab heading={
+                <Tab 
+                activeTextStyle={{color: '#2B79C7', fontWeight: 'normal'}}                    
+                heading={
                     <TabHeading style={style.tab_header}>
                         <Icon name='trending-down' type='MaterialIcons'/>
                         <Text>Loosers</Text>
                     </TabHeading>
                 } activeTextStyle={{color:'#2B79C9',width:'100%',textAlign:'center'}} tabStyle={style.tab_header} activeTabStyle={style.tab_header_active} >
-                    <List data={this.props.reducer.data} size={5} isGain={false}/>
+                    <List navigation={this.props.navigation}  data={this.props.reducer.data} size={5} isGain={false}/>
                 </Tab>
             </Tabs>
             <View style={{justifyContent:'center',height:50}}>

@@ -26,12 +26,14 @@ import {
         // console.log(this.props)
         return(
             <Container style={styles.container}>
-                <Header style={styles.header}>
-                    <Left style={styles.titleCentering}/>
-                    <Body style={styles.titleCentering}>
-                        <Title style={styles.headerTitle}>Account</Title>
-                    </Body>
-                    <Right style={styles.titleCentering}/>
+                <Header style={styles.header} noShadow>
+                <Left style={styles.titleCentering}/>
+                <Body style={styles.titleCentering}>
+                    <Title style={styles.headerTitle}>Markets</Title>
+                </Body>
+                <Right style={styles.titleCentering}>
+                    <Icon name='ios-search' />
+                </Right>
                 </Header>
                 <Content>
                     <View style={[styles.row, { padding: 12, marginTop: 0}]}>
@@ -63,7 +65,7 @@ import {
                             thumbTintColor='#2B79C9'
                             onTintColor='#e7f2ff'
                             tintColor='#555'
-                            style={[styles.RightCol]}/>
+                            style={[styles.switch]}/>
                     </View>
                     <View style={[styles.row, { padding: 12}]}>
                             <Icon name='gift' type='FontAwesome' style={styles.Licon}>
@@ -127,12 +129,12 @@ import {
         backgroundColor: '#f3f7fa'
       },
       header: {
-          backgroundColor: 'white'
+        backgroundColor: 'white'
       },
       headerTitle:{
           textAlign: 'center',
-          marginLeft: 50,
-          color: '#5a667c'
+          color: '#5a667c',
+          marginLeft : 20,
       },
       titleCentering: {
           flex: 1
@@ -154,6 +156,11 @@ import {
         color: '#9ba2b0', 
         fontSize: 13,
         textAlign : 'right',
+        position: 'absolute',
+        right: 17,
+        top: 15
+      },
+      switch: {
         position: 'absolute',
         right: 17,
         top: 15

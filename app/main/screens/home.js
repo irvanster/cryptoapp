@@ -24,37 +24,32 @@ export default class Home extends Component {
       <Container style={styles.container}>
         <Content>
           <View style={{ height : 200 }}>
-            <Swiper
-                  showsPagination={false}
-                  autoplay={true}
-                  autoplayTimeout={7}
-                  style={styles.bannerWrapper}
-                >
-                  <View style={styles.banners}>
-                    <Image style={styles.bannerSlide} source={ require('../../../assets/images/banner1.gif') }/>
-                  </View>
-                  <View style={styles.banners}>
-                    <Image style={styles.bannerSlide} source={ require('../../../assets/images/banner2.png') }/>
-                  </View>
-                  <View style={styles.banners}>
-                    <Image style={styles.bannerSlide} source={ require('../../../assets/images/banner3.png') }/>
-                  </View>
-                  <View style={styles.banners}>
-                    <Image style={styles.bannerSlide} source={ require('../../../assets/images/banner4.png') }/>
-                  </View>
-                  <View style={styles.banners}>
-                    <Image style={styles.bannerSlide} source={ require('../../../assets/images/banner5.gif') }/>
-                  </View>
-                  <View style={styles.banners}>
-                    <Image style={styles.bannerSlide} source={ require('../../../assets/images/banner6.png') }/>
-                  </View>
-                  <View style={styles.banners}>
-                    <Image style={styles.bannerSlide} source={ require('../../../assets/images/banner7.png') }/>
-                  </View>
-                  <View style={styles.banners}>
-                    <Image style={styles.bannerSlide} source={ require('../../../assets/images/banner8.png') }/>
-                  </View>
-                </Swiper>
+          <Swiper autoplay={true} autoplayTimeout={3} showsButtons={false} style={{height:200}}
+            renderPagination={(index, total, context) => {
+                return (
+                    <View style={styles.paginationStyle}>
+                        <Text style={styles.paginationText}>{index + 1}</Text>
+                    </View>
+                )}}>
+                <Image source={require('../../../assets/images/banner1.gif')} style={{width:'100%',height:200}}>
+
+                </Image>
+                <Image source={require('../../../assets/images/banner2.png')} style={{width:'100%',height:200}}>
+
+                </Image>
+                <Image source={require('../../../assets/images/banner3.png')} style={{width:'100%',height:200}}>
+
+                </Image>
+                <Image source={require('../../../assets/images/banner4.png')} style={{width:'100%',height:200}}>
+
+                </Image>
+                <Image source={require('../../../assets/images/banner5.gif')} style={{width:'100%',height:200}}>
+
+                </Image>
+                <Image source={require('../../../assets/images/banner6.png')} style={{width:'100%',height:200}}>
+
+                </Image>
+        </Swiper>
           </View>
           <View style={styles.row}>
             <Swiper style={styles.timelineWrapper}
@@ -248,7 +243,7 @@ export default class Home extends Component {
             </Grid>
           </View>
             <View style={{marginTop:10}}>
-                <Market></Market>
+                <Market navigation={this.props.navigation}></Market>
             </View>
         </Content>
       </Container>
@@ -323,5 +318,48 @@ const styles = StyleSheet.create({
     paddingLeft: 17,
     paddingRight: 17,
     marginTop: 5,
-  }
+  },
+  item:{
+    backgroundColor: '#fff',
+    marginTop: 10,
+},  
+paginationStyle: {
+    position: 'absolute',
+    bottom: 10,
+    left: 10,
+    height:30,
+    width:30,
+    backgroundColor:'#FDD07D',
+    borderRadius:35
+  },
+  paginationText: {
+    textAlign:'center',
+    color: 'black',
+    fontSize: 20
+  },
+  backgroundHeader : {
+    position : "absolute",
+    top : 0,
+    left : 0 ,
+    right:0 , 
+    backgroundColor: "#222",
+    zIndex : 1000
+},
+leftIcon : {
+    position : "absolute",
+    right : 15,
+    top :30,
+    zIndex : 1000
+},
+rightImage :{
+    position : "absolute",
+    left : 15,
+    width: 100,
+    top:30,
+    zIndex : 1000
+},
+Icons : {
+    color:"#ddd",
+    fontSize : 18
+}
 })

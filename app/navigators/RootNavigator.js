@@ -56,6 +56,7 @@ navigationOptions: ({ navigation }) => ({
     },
     showIcon: true,
     renderIndicator: () => null,
+    allowFontScaling : false,
 
   },
 
@@ -66,20 +67,11 @@ const MainNavigator = StackNavigator({
     navigationOptions:{
       header:null
     }
-  },
-  Market: {
-    screen: MainMarket,
-    navigationOptions:{
-      title:'Markets',
-      headerTitleStyle :{textAlign: 'center',alignSelf:'center'},
-    }
   },DetailCoin:{
     screen : DetailCoin,
     navigationOptions:({navigation})=>({
       title : typeof(navigation.state.params)==='undefined' || typeof(navigation.state.params.title) === 'undefined' ? 'Detail Market': navigation.state.params.title
     })
-  },Trades:{
-    screen: Trades,
   }
 })
 const RootNavigator = TabNavigator({
@@ -88,8 +80,6 @@ const RootNavigator = TabNavigator({
     navigationOptions:{
       title: 'Home',
       header: null,
-      
-
     }
   },
   Market: {
@@ -99,7 +89,7 @@ const RootNavigator = TabNavigator({
     }
   },
   Trades: {
-    screen: MainMarket,
+    screen: Trades,
     navigationOptions: {
       title: 'Trades',
       header: null,
@@ -110,15 +100,14 @@ const RootNavigator = TabNavigator({
     screen: Account,
     navigationOptions: {
       title: 'Funds',
+      header: null,
     }
   },
   Account: {
     screen: Account,
-    header: {
-      headerTitle: 'adas'
-    },
     navigationOptions: {
       title: 'Account',
+      header: null,
     }
   }
   },tabOptions)
