@@ -13,7 +13,6 @@ export default class HomeMain extends Component {
     constructor(props) {
         super(props);
         console.disableYellowBox = true
-        console.log(this.props)
     }
     
   render() {

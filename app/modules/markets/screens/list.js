@@ -60,8 +60,13 @@ export default class List extends Component {
 
         {this.props.data.slice(0,(this.props.size)).map((item,index)=>{
             return(
+<<<<<<< HEAD
                 <TouchableOpacity  key={index} onPress={()=>this.props.navigation.navigate('DetailCoin',{item,title:`${item.pair_from.name} / ${item.pair_target.name}`})}>
                     <View style={{marginLeft:10,marginRight:10,marginTop:10, paddingBottom:10, borderBottomColor:'#e9e9e9',borderBottomWidth:0.5,}}>
+=======
+                <TouchableOpacity key={index} onPress={()=>this.props.navigation.navigate('DetailCoin',{item,title:`${item.pair_from.name} / ${item.pair_target.name}`})}>
+                    <View  style={{marginLeft:10,marginRight:10,marginTop:10, paddingBottom:10, borderBottomColor:'#e9e9e9',borderBottomWidth:0.5,}}>
+>>>>>>> 78f99e1bb0081c56277c40667e5a0c9795dd9b18
                     <Row size={3}>
                         <Col sm={1}>
                         <Row size={2}> 
