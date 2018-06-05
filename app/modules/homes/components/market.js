@@ -60,11 +60,7 @@ class Market extends Component {
                         <Text>Loosers</Text>
                     </TabHeading>
                 } activeTextStyle={{color:'#2B79C9',width:'100%',textAlign:'center'}} tabStyle={style.tab_header} activeTabStyle={style.tab_header_active} >
-<<<<<<< HEAD
                     <List navigation={this.props.navigation}  data={this.props.reducer.data} size={5} isGain={false}/>
-=======
-                    <List navigation={this.props.navigation} data={this.props.reducer.data} size={5} isGain={false}/>
->>>>>>> 78f99e1bb0081c56277c40667e5a0c9795dd9b18
                 </Tab>
             </Tabs>
 
