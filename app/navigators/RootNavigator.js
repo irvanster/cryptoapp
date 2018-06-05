@@ -7,7 +7,7 @@ import { HomeMain } from '../modules/homes'
 import DetailCoin from '../modules/markets/screens/details/main'
 import Trades from '../modules/trades/main'
 import { Account,Home } from '../main/screens'
-import { Login } from '../modules/auth/screens'
+import { Login, Register } from '../modules/auth/screens'
 
 import {primaryColor} from '../modules/commons/const_style'
 import { Icon, Root } from 'native-base'
@@ -78,6 +78,11 @@ const MainNavigator = StackNavigator({
     screen : Login,
     navigationOptions: {
       header: null
+    }, Register: {
+      screen: Register,
+      navigationOptions: {
+        header: null
+      }
     }
   }
 })
@@ -85,7 +90,7 @@ const RootNavigator = TabNavigator({
   HomeMain: {
     screen : MainNavigator,
     navigationOptions:{
-      title: 'Home',
+      title: 'Markets',
       header: null,
     }
   },
@@ -105,7 +110,7 @@ const RootNavigator = TabNavigator({
     }
   },
   Funds: {
-    screen: Account,
+    screen: Login,//Account
     navigationOptions: {
       title: 'Funds',
       header: null,

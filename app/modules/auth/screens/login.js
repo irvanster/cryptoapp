@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Image } from 'react-native'
 import {Column as Col, Row} from 'react-native-flexbox-grid'
 import {Content, Container, Header, Left, Right,
     Icon, Body, Title, Button, H3, P,
@@ -13,11 +13,11 @@ export default class Login extends Component {
 
         return(
             <Container style={{ backgroundColor :  'white' }}>
-                <Thumbnail square 
+                <Content style={{ padding : 30, paddingTop: 100 }}>
+                <Image square 
                     style={{alignSelf : 'center', marginBottom: 10 }} 
                     source={require('../../../../assets/images/logo.png')}
                 />
-                <Content style={{ width: '85%', alignSelf: 'center' }}>
                     <Form>
                         <Item floatingLabel style={{ marginLeft: 0 }}>
                             <Label>Email</Label>
@@ -26,24 +26,25 @@ export default class Login extends Component {
                         <Item floatingLabel style={{ marginLeft: 0 }}>
                             <Label>Password</Label>
                             <Input secureTextEntry={true}/>
+                            <Icon name='md-eye' style={{ color : '#aaa', fontSize: 15 }} />
                         </Item>
                     </Form>
-                    <Button onPress={ () => Navigator.navigate('Home') } 
-                            rounded 
-                            block 
-                            style={{
-                                marginTop: 25,
-                                marginBottom: 25,
-                                backgroundColor : '#007bff'
-                                }}
-                        >
+                    <Button  
+                        block 
+                        style={{
+                            marginTop: 25,
+                            marginBottom: 25,
+                            backgroundColor : '#007bff'
+                            }}
+                    >
                             <Text style={{ color : 'white' }}>Login</Text>
                         </Button>
                         <Row>
                             <Col sm={12}>
-                                <Text>
-                                    <Text>Lupa Password?</Text>
-                                    <Text>Daftar Disini</Text>
+                                <Text style={{ color : '#007bff', textAlign: 'center' }}>
+                                    <Text>Lupa Password? </Text>
+                                    <Text style={{ color: '#777' }}>·</Text>
+                                    <Text> Daftar Disini</Text>
                                 </Text>
                             </Col>
                         </Row>

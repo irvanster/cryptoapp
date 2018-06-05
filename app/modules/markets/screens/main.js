@@ -35,7 +35,7 @@ class Main extends Component {
         <Title style={style.headerTitle}>Markets</Title>
       </Body>
       <Right style={style.titleCentering}>
-        <Icon name='ios-search' />
+        <Icon name='ios-search' style={{ color : '#777', fontSize: 20 }} />
       </Right>
     </Header>
     {/* #UI001A1 remove tabs */}

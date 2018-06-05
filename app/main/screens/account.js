@@ -29,11 +29,9 @@ import {
                 <Header style={styles.header} noShadow>
                 <Left style={styles.titleCentering}/>
                 <Body style={styles.titleCentering}>
-                    <Title style={styles.headerTitle}>Markets</Title>
+                    <Title style={styles.headerTitle}>Account</Title>
                 </Body>
-                <Right style={styles.titleCentering}>
-                    <Icon name='ios-search' />
-                </Right>
+                <Right style={styles.titleCentering}/>
                 </Header>
                 <Content>
                     <View style={[styles.row, { padding: 12, marginTop: 0}]}>
