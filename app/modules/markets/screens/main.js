@@ -38,26 +38,8 @@ class Main extends Component {
         <Icon name='ios-search' />
       </Right>
     </Header>
-        <Tabs
-          initialPage={0} 
-          tabBarUnderlineStyle={{backgroundColor:'#2B79C9'}}
-          onChangeTab={({i,ref,from})=>this.setState({currentIndexTab:i})}>
-          <Tab heading="BTC" activeTextStyle={{color:'#2B79C9'}} tabStyle={style.tab_header} activeTabStyle={style.tab_header_active} >
-            <List navigation={this.props.navigation} data={this.props.reducer.btcReducer.data} isDetail={true}></List>
-          </Tab>
-          <Tab heading="ADX" activeTextStyle={{color:'#2B79C9'}} tabStyle={style.tab_header} activeTabStyle={style.tab_header_active} >
-            <List navigation={this.props.navigation} data={this.props.reducer.adxReducer.data} isDetail={true}></List>
-          </Tab>
-          <Tab heading="BNB"  activeTextStyle={{color:'#2B79C9'}} tabStyle={style.tab_header} activeTabStyle={style.tab_header_active} >
-          <List navigation={this.props.navigation} data={this.props.reducer.btcReducer.data} isDetail={true}></List>
-          </Tab>
-          <Tab heading="ASD" activeTextStyle={{color:'#2B79C9'}} tabStyle={style.tab_header} activeTabStyle={style.tab_header_active} >
-          <List navigation={this.props.navigation} data={this.props.reducer.btcReducer.data} isDetail={true}></List>
-          </Tab>
-          <Tab heading="DCT" activeTextStyle={{color:'#2B79C9'}} tabStyle={style.tab_header} activeTabStyle={style.tab_header_active} >
-          <List navigation={this.props.navigation} data={this.props.reducer.btcReducer.data} isDetail={true}></List>
-        </Tab>
-        </Tabs>
+    {/* #UI001A1 remove tabs */}
+    <List navigation={this.props.navigation} data={this.props.reducer.btcReducer.data} isDetail={true}></List>
       </Container>
     )
   }

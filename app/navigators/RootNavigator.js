@@ -62,8 +62,9 @@ navigationOptions: ({ navigation }) => ({
 
 }
 const MainNavigator = StackNavigator({
+  //#UI001A2 Change Home to Market
   Home :{
-    screen : Home,
+    screen : MainMarket,
     navigationOptions:{
       header:null
     }
@@ -82,12 +83,13 @@ const RootNavigator = TabNavigator({
       header: null,
     }
   },
-  Market: {
-    screen: MainMarket,
-    navigationOptions: {
-      title: 'Market',
-    }
-  },
+  //#UI001A2 Remove Home
+  // Market: {
+  //   screen: MainMarket,
+  //   navigationOptions: {
+  //     title: 'Market',
+  //   }
+  // },
   Trades: {
     screen: Trades,
     navigationOptions: {
