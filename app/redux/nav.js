@@ -2,7 +2,7 @@ import RootNavigator from '../navigators/RootNavigator'
 
 //set initial route
 const initialState = RootNavigator.router.getStateForAction(
-  RootNavigator.router.getActionForPathAndParams('HomeMain')
+  RootNavigator.router.getActionForPathAndParams('DetailCoin')
 )
 
 const navReducer = (state = initialState, action) => {

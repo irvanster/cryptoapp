@@ -12,6 +12,7 @@ import {
   initializeListeners,                  
 } from 'react-navigation-redux-helpers';
 
+import { AppNavigator } from 'react-native-navigation-actions';
 
 const addListener = createReduxBoundAddListener("root");
 
@@ -33,13 +34,17 @@ const mapStateToProps = (state) => ({
   nav: state.nav
 })
 
+// temp removed Navigator-Redux/
+// Replace with AppWithNavigation to rollback
+const AppNav = AppNavigator(RootNavigator)
+//
 const AppWithNavigationState = connect(mapStateToProps)(App);
 
 export default class Root extends Component {
   render() {
     return (
       <Provider store={store}>
-        <AppWithNavigationState />
+        <AppNav></AppNav>
       </Provider>
     );
   }
