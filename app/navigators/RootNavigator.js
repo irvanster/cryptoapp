@@ -7,9 +7,10 @@ import { HomeMain } from '../modules/homes'
 import DetailCoin from '../modules/markets/screens/details/main'
 import Trades from '../modules/trades/main'
 import { Account,Home } from '../main/screens'
+import { Login } from '../modules/auth/screens'
 
 import {primaryColor} from '../modules/commons/const_style'
-import { Icon, Root } from 'native-base';
+import { Icon, Root } from 'native-base'
 import React from 'react'
 
 const tabOptions = {    
@@ -72,6 +73,11 @@ const MainNavigator = StackNavigator({
     navigationOptions:({navigation})=>({
       title : typeof(navigation.state.params)==='undefined' || typeof(navigation.state.params.title) === 'undefined' ? 'Detail Market': navigation.state.params.title
     })
+  }, Login: {
+    screen : Login,
+    navigationOptions: {
+      header: null
+    }
   }
 })
 const RootNavigator = TabNavigator({
