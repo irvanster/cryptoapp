@@ -15,7 +15,7 @@ import {
         }}
     />
   )
- export default class Account extends Component {
+ export default class AccountMain extends Component {
     constructor(props) {
         super(props)
         this.state = {

@@ -1,12 +1,11 @@
 import { StackNavigator,TabNavigator} from 'react-navigation';
 
-import { ContactsList, ContactsCreate, ContactsDetail } from '../contacts/screens'
-
 import { Main as MainMarket } from '../modules/markets/screens/index'
 import { HomeMain } from '../modules/homes'
 import DetailCoin from '../modules/markets/screens/details/main'
 import Trades from '../modules/trades/main'
-import { Account,Home } from '../main/screens'
+import { Account } from '../modules/account/screens/'
+import AccountMain from '../modules/account/main'
 import { Login, Register } from '../modules/auth/screens'
 
 import {primaryColor} from '../modules/commons/const_style'
@@ -34,7 +33,7 @@ navigationOptions: ({ navigation }) => ({
     }else if (routeName === 'Trades') {
         iconName = 'flow-tree';
         iconType = 'Entypo';
-    }else if (routeName === 'Funds') {
+    }else if (routeName === 'Wallet') {
       iconName = 'md-cash';
     }else if (routeName === 'Account') {
       iconName = `ios-contacts${focused ? '' : '-outline'}`;
@@ -109,15 +108,15 @@ const RootNavigator = TabNavigator({
 
     }
   },
-  Funds: {
+  Wallet: {
     screen: Login,//Account
     navigationOptions: {
-      title: 'Funds',
+      title: 'Wallet',
       header: null,
     }
   },
   Account: {
-    screen: Account,
+    screen: AccountMain,
     navigationOptions: {
       title: 'Account',
       header: null,
